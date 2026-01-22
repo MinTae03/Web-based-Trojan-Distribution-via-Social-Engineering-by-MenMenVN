@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập vào tài khoản Microsoft của bạn</title>
+    <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Microsoft_icon.svg/960px-Microsoft_icon.svg.png"/>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Microsoft_icon.svg/960px-Microsoft_icon.svg.png" alt="Microsoft" class="logo">
+            <h2>Đăng nhập</h2>
+
+            <form id="dbForm">
+                <div class="input-group">
+                    <input type="email" id="emailInput" placeholder="Email, điện thoại hoặc Skype" required>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" id="passInput" placeholder="Password" required>
+                </div>
+
+                <div class="actions">
+                    <p>Không có tài khoản? <a href="#">Tạo tài khoản!</a></p>
+                    <p><a href="#">Đăng nhập bằng khóa bảo mật</a></p>
+                </div>
+
+                <div class="button-group">
+                    <button type="button" class="btn-back" >Quay lại</button>
+                    <button type="submit" class="btn-next" onclick="window.location.href='./index.html'">Signin</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+
+    <footer class="login-footer">
+        <a href="#">Điều khoản sử dụng</a>
+        <a href="#">Quyền riêng tư & cookie</a>
+        <span>...</span>
+    </footer>
+
+    <script src="./login.js"></script>
+</body>
+</html>

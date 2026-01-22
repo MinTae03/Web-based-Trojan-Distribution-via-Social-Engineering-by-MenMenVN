@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #ff0000;
+    font-family: 'Courier New', Courier, monospace;
+    
+    min-height: 100vh;  /* Cho phép dài hơn màn hình nếu nội dung nhiều */
+    overflow-y: auto;   /* Tự động hiện thanh cuộn dọc khi cần */
+    
+    /* Giữ nguyên các thuộc tính căn chỉnh nếu muốn nội dung ít vẫn ở giữa */
+    display: flex;
+    flex-direction: column; /* Quan trọng: xếp nội dung từ trên xuống dưới */
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0; /* Thêm đệm trên dưới để không bị sát mép khi cuộn */
+}
+
+.hazard-container {
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #ff0000;
+    box-shadow: 0 0 20px #ff0000;
+    background: rgba(20, 0, 0, 0.9);
+}
+
+.warning-icon {
+    font-size: 80px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 15px #ff0000;
+}
+
+h1 {
+    font-size: 45px;
+    margin-bottom: 20px;
+    letter-spacing: 5px;
+}
+
+.status-msg {
+    font-size: 18px;
+    margin-bottom: 30px;
+    max-width: 600px;
+    text-align: center;
+}
+
+/* Thanh tiến trình kiểu nguy hiểm */
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background: #300;
+    border: 1px solid #ff0000;
+    margin-bottom: 10px;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background: #ff0000;
+    box-shadow: 0 0 10px #ff0000;
+}
+
+/* Hiệu ứng chữ nhấp nháy */
+.blink {
+    animation: blinker 0.5s linear infinite;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+@keyframes blinker {
+    50% { opacity: 0; }
+}
+
+.code {
+    background: #ff0000;
+    color: #000;
+    padding: 2px 5px;
+}
+.paragraph-warning {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px dashed #ff0000; /* Đường kẻ đứt ngăn cách */
+    text-align: left; /* Căn lề trái để trông giống thông báo log hơn */
+}
+
+.paragraph-warning h1 {
+    font-size: 24px;
+    color: #ff0000;
+    text-shadow: 0 0 10px #ff0000;
+    margin-bottom: 10px;
+}
+
+.paragraph-warning p {
+    font-size: 16px;
+    line-height: 1.4;
+    color: #ff3333; /* Màu đỏ nhạt hơn một chút để dễ đọc */
+    margin-bottom: 15px;
+}
+
+.paragraph-warning h2 {
+    font-size: 20px;
+    text-transform: uppercase;
+    background: #ff0000;
+    color: #000;
+    display: inline-block;
+    padding: 2px 10px;
+}
+
+.blink-slow {
+    animation: blinker 2s linear infinite;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+/* Khu vực nhập mã giải mã */
+.decrypt-section {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px dashed #ff0000;
+}
+
+.decrypt-section label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #ff0000;
+    text-shadow: 0 0 5px #ff0000;
+}
+
+.input-wrapper {
+    display: flex;
+    gap: 10px;
+}
+
+/* Ô nhập liệu chuẩn hacker */
+.decrypt-section input {
+    flex: 1; /* Chiếm hết khoảng trống còn lại */
+    background-color: #000;
+    border: 2px solid #ff0000;
+    color: #ff0000;
+    padding: 10px 15px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    outline: none;
+    text-transform: uppercase;
+}
+
+.decrypt-section input::placeholder {
+    color: #550000; /* Màu đỏ tối cho placeholder */
+}
+
+.decrypt-section input:focus {
+    box-shadow: 0 0 15px #ff0000; /* Phát sáng khi click vào */
+}
+
+/* Nút Unlock */
+.decrypt-section button {
+    background-color: #ff0000;
+    color: #000;
+    border: 2px solid #ff0000;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.decrypt-section button:hover {
+    background-color: #000;
+    color: #ff0000;
+    box-shadow: 0 0 15px #ff0000;
+}
+
+.console-log {
+    height: 150px;
+    overflow: hidden;
+    background: #111;
+    color: #0f0; /* Màu xanh lá hacker hoặc đỏ */
+    font-family: monospace;
+    font-size: 12px;
+    text-align: left;
+    padding: 10px;
+    border: 1px solid #333;
+}
+
+/* Style cho cửa sổ lỗi giả */
+.fake-popup {
+    position: absolute;
+    width: 350px;
+    background: #e1e1e1; /* Màu xám Windows cổ điển */
+    border: 1px solid #005da6;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    z-index: 9999;
+    font-family: 'Segoe UI', sans-serif;
+    user-select: none;
+    animation: popIn 0.1s;
+}
+
+.popup-header {
+    background: linear-gradient(90deg, #005da6, #0099e6);
+    color: white;
+    padding: 5px 10px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.popup-body {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: black;
+    font-size: 13px;
+}
+
+.popup-icon {
+    font-size: 30px;
+}
+
+.popup-footer {
+    padding: 10px;
+    text-align: right;
+    background: #f0f0f0;
+}
+
+.popup-btn {
+    padding: 4px 15px;
+    border: 1px solid #888;
+    background: #ddd;
+    cursor: pointer;
+}
+
+@keyframes popIn {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
